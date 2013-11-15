@@ -8,8 +8,8 @@ PROTO=arduino
 BAUD=115200
 AVRDUDEFLAGS=-v
 
-TARGET=gcn64.asm
-SOURCES=$(TARGET:.asm.hex=.asm)
+TARGET=gcn64.hex
+SOURCES=$(TARGET:.hex=.asm)
 
 all: $(TARGET)
 
@@ -21,7 +21,7 @@ clean:
 flash: all
 	$(AVRDUDE) -p$(IC) -P$(PORT) -c$(PROTO) -b$(BAUD) -Uflash:w:$(TARGET) $(AVRDUDEFLAGS)
 
-%.s.hex : %.s
+%.hex : %.asm
 	$(AVRA) -o $@ $<
 
 
