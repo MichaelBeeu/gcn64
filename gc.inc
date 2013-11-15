@@ -1,9 +1,9 @@
-/*
- * gc.inc
- *
- *  Created: 11/1/2013 1:50:18 AM
- *   Author: Owner
- */ 
+;*
+;* gc.inc
+;*
+;*  Created: 11/1/2013 1:50:18 AM
+;*   Author: Owner
+;*/ 
 
  .equ GC_DDR   = DDRD
  .equ GC_PIN   = PIND

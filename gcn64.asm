@@ -1,9 +1,9 @@
-/*
- * gcn64.asm
- *
- *  Created: 11/1/2013 1:47:56 AM
- *   Author: Owner
- */ 
+;*
+;* gcn64.asm
+;*
+;*  Created: 11/1/2013 1:47:56 AM
+;*   Author: Owner
+;* 
 
 .include "tn2313def.inc"
 
@@ -90,23 +90,23 @@ gcToN64:
 
 	; C-buttons
 	; TODO: Actually implement the C buttons
-/*	set
-	ldd r16, Y+3      ; C-stick Y axis (up/down c-button)
-	lsr r16
-	subi r16, 64
-	sbrs r16, 7       ; C-up
-	bld r17, 3
-	sbrc r16, 7       ; C-down
-	bld r17, 2
-
-	ldd r16, Y+2      ; C-stick X axis (left/right c-button)
-	lsr r16
-	subi r16, 64
-	sbrs r16, 7       ; C-right
-	bld r17, 1
-	sbrc r16, 7       ; C-left
-	bld r17, 0
-	*/
+;	set
+;	ldd r16, Y+3      ; C-stick Y axis (up/down c-button)
+;	lsr r16
+;	subi r16, 64
+;	sbrs r16, 7       ; C-up
+;	bld r17, 3
+;	sbrc r16, 7       ; C-down
+;	bld r17, 2
+;
+;	ldd r16, Y+2      ; C-stick X axis (left/right c-button)
+;	lsr r16
+;	subi r16, 64
+;	sbrs r16, 7       ; C-right
+;	bld r17, 1
+;	sbrc r16, 7       ; C-left
+;	bld r17, 0
+	
 
 	std Z+1, r17       ; Second n64 byte
 
@@ -212,6 +212,6 @@ main:
 	rjmp main_loop
 
 .dseg
-gc_buf : .byte 8
+gc_buf:  .byte 8
 n64_buf: .byte 4
 n64_ident_buf: .byte 4

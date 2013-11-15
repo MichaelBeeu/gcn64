@@ -1,27 +1,33 @@
-
 AVRA=avra
 AVRDUDE=avrdude
 
+BINDIR=Debug
+
 IC=attiny2313
 PORT=/dev/ttyACM0
-PROTO=arduino
+PROTO=avrispv2
 BAUD=115200
-AVRDUDEFLAGS=-v
 
-TARGET=gcn64.hex
-SOURCES=$(TARGET:.hex=.asm)
+AVRDUDEFLAGS=-v
+AVRAFLAGS=-I /usr/share/avra
+
+PROJNAME=$(shell basename `pwd`)
+TARGET=$(BINDIR)/$(PROJNAME).hex
 
 all: $(TARGET)
-
-$(TARGET): delay.inc n64.inc gc.inc
-
-clean:
-	rm -f $(SOURCES).cof $(SOURCES).eep.hex $(SOURCES).hex $(SOURCES).obj
 
 flash: all
 	$(AVRDUDE) -p$(IC) -P$(PORT) -c$(PROTO) -b$(BAUD) -Uflash:w:$(TARGET) $(AVRDUDEFLAGS)
 
-%.hex : %.asm
-	$(AVRA) -o $@ $<
+clean:
+	rm -f $(BINDIR)/$(PROJNAME).cof $(BINDIR)/$(PROJNAME).eep.hex $(BINDIR)/$(PROJNAME).obj $(TARGET) 
 
+$(BINDIR)/%.hex : %.asm
+	-mkdir -p $(dir $@)
+	# For some reason AVRA doesn't acknowledge the output directory
+	# and will place output files in the basepath of the source file
+	-ln -s ../$< $(dir $@)$<
+	cd $(dir $@) ; $(AVRA) $(AVRAFLAGS) -I ../ -o $@ $<
+	-rm $(dir $@)$<
 
+.PHONY: all

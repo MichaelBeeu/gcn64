@@ -1,9 +1,9 @@
-/*
- * n64.inc
- *
- *  Created: 11/1/2013 1:50:31 AM
- *   Author: Owner
- */ 
+;*
+;* n64.inc
+;*
+;*  Created: 11/1/2013 1:50:31 AM
+;*   Author: Owner
+;* 
 
  .equ N64_DDR   = DDRD
  .equ N64_PIN   = PIND
