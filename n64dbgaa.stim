@@ -1,0 +1,37 @@
+// Simple stimuli file to simulate and n64 poll command
+// Assumes 8mhz clock
+
+// Pin must be high to begin
+PIND |= 0xff
+#8
+$repeat 4
+    // Bring pin low to initiate bit
+    PIND &= 0x00
+    // Wait 1us
+    #8
+    // Bring pin high
+    PIND |= 0xff
+    // 3us
+    #24
+
+    // Bring pin low to initiate bit
+    PIND &= 0x00
+    // Wait 3us
+    #24
+    // Bring pin high
+    PIND |= 0xff
+    // 1us
+    #8
+$endrep
+
+// Stop bit:
+PIND &= 0x00
+// 1us
+#8
+PIND |= 0xff
+#16
+
+// PIND &= 0x00
+
+#125
+

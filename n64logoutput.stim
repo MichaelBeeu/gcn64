@@ -1,0 +1,5 @@
+$log DDRD
+$startlog n64Output.stim
+#800
+$stoplog
+
