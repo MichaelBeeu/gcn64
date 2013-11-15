@@ -2,7 +2,7 @@
 ;* gcn64.asm
 ;*
 ;*  Created: 11/1/2013 1:47:56 AM
-;*   Author: Owner
+;*   Author: Michael Beeuwsaert
 ;* 
 
 .include "tn2313def.inc"

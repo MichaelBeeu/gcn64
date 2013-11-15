@@ -2,7 +2,7 @@
 ;* delay.inc
 ;*
 ;*  Created: 11/1/2013 12:15:38 PM
-;*   Author: Owner
+;*   Author: Michael Beeuwsaert
 ;* 
 
 ; Assumes 8mhz clock

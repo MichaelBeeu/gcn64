@@ -2,7 +2,7 @@
 ;* gc.inc
 ;*
 ;*  Created: 11/1/2013 1:50:18 AM
-;*   Author: Owner
+;*   Author: Michael Beeuwsaert
 ;*/ 
 
  .equ GC_DDR   = DDRD

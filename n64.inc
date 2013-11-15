@@ -2,7 +2,7 @@
 ;* n64.inc
 ;*
 ;*  Created: 11/1/2013 1:50:31 AM
-;*   Author: Owner
+;*   Author: Michael Beeuwsaert
 ;* 
 
  .equ N64_DDR   = DDRD
