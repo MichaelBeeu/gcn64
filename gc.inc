@@ -100,6 +100,7 @@ gc_send_8mhz:
 ; r17 - Number of bytes to read
 gc_read:
     cli
+	in r21, SREG
     ; Add 32 to r18, to try and save a cycle
     ldi r18, 32
     mov r0, r18
@@ -144,6 +145,7 @@ gc_read:
     brne gc_read_byte
 
     gc_read_timeout:
+	out SREG, r21
     sei
     ret
 
