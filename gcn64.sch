@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fri 15 Nov 2013 02:12:31 AM CST
+EESchema Schematic File Version 2  date Tue 19 Nov 2013 03:57:42 AM CST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -29,13 +29,14 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-EELAYER 43  0
+LIBS:gcn64-cache
+EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "15 nov 2013"
+Date "19 nov 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -43,48 +44,48 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 7350 7550 0    60   ~ 0
-gcn64
 Wire Wire Line
-	5650 1200 5650 1000
+	4850 3100 6600 3100
 Wire Wire Line
-	5650 1000 5950 1000
+	6600 3000 5650 3000
 Wire Wire Line
-	2300 1200 2300 1350
+	4850 3000 5150 3000
 Wire Wire Line
-	6400 2400 6400 2300
-Connection ~ 6400 3100
+	5950 800  5600 800 
 Wire Wire Line
-	6600 3100 5700 3100
+	5600 800  5600 700 
 Wire Wire Line
-	4850 3100 5200 3100
-Wire Wire Line
-	3700 3700 3700 3850
-Wire Wire Line
-	1300 650  1300 700 
-Wire Wire Line
-	1300 700  1100 700 
-Wire Wire Line
-	1100 1000 1300 1000
-Wire Wire Line
-	1300 1000 1300 1200
-Wire Wire Line
-	3700 1350 3700 1600
-Wire Wire Line
-	2300 1850 2300 1900
-Wire Wire Line
-	2300 1900 2550 1900
+	5900 2500 5900 2300
+Connection ~ 5900 3000
 Wire Wire Line
 	6400 3100 6400 2900
 Wire Wire Line
-	6600 3000 4850 3000
-Connection ~ 5900 3000
+	2550 1900 2300 1900
 Wire Wire Line
-	5900 2500 5900 2300
+	2300 1900 2300 1850
 Wire Wire Line
-	5600 700  5600 800 
+	3700 1350 3700 1600
 Wire Wire Line
-	5600 800  5950 800 
+	1300 1200 1300 1000
+Wire Wire Line
+	1300 1000 1100 1000
+Wire Wire Line
+	1100 700  1300 700 
+Wire Wire Line
+	1300 700  1300 650 
+Wire Wire Line
+	3700 3700 3700 3850
+Connection ~ 6400 3100
+Wire Wire Line
+	6400 2400 6400 2300
+Wire Wire Line
+	2300 1200 2300 1350
+Wire Wire Line
+	5950 1000 5650 1000
+Wire Wire Line
+	5650 1000 5650 1200
+Text Notes 7350 7550 0    60   ~ 0
+gcn64
 $Comp
 L +3.3V #PWR01
 U 1 1 5285D62E
@@ -142,10 +143,10 @@ $EndComp
 $Comp
 L R R2
 U 1 1 5285D52B
-P 5450 3100
-F 0 "R2" V 5530 3100 50  0000 C CNN
-F 1 "220" V 5450 3100 50  0000 C CNN
-	1    5450 3100
+P 5400 3000
+F 0 "R2" V 5480 3000 50  0000 C CNN
+F 1 "220" V 5400 3000 50  0000 C CNN
+	1    5400 3000
 	0    1    1    0   
 $EndComp
 $Comp
