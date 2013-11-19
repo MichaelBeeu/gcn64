@@ -89,23 +89,33 @@ gcToN64:
     bld r17, 4
 
     ; C-buttons
-    ; TODO: Actually implement the C buttons
-;   set
-;   ldd r16, Y+3      ; C-stick Y axis (up/down c-button)
-;   lsr r16
-;   subi r16, 64
-;   sbrs r16, 7       ; C-up
-;   bld r17, 3
-;   sbrc r16, 7       ; C-down
-;   bld r17, 2
-;
-;   ldd r16, Y+2      ; C-stick X axis (left/right c-button)
-;   lsr r16
-;   subi r16, 64
-;   sbrs r16, 7       ; C-right
-;   bld r17, 1
-;   sbrc r16, 7       ; C-left
-;   bld r17, 0
+   set
+   ldd r16, Y+3      ; C-stick Y axis (up/down c-button)
+   cpi r16, 192
+   brlo no_c_up
+          ; C-up
+   bld r17, 3
+   no_c_up:
+
+   cpi r16, 64
+   brsh no_c_y_axis
+          ; C-down
+   bld r17, 2
+   no_c_y_axis:
+
+   ldd r16, Y+2      ; C-stick X axis (left/right c-button)
+
+   cpi r16, 192
+   brlo no_c_right
+          ; C-left
+   bld r17, 0
+   no_c_right:
+    
+    cpi r16, 64
+   brsh no_c_x_axis
+          ; C-right
+   bld r17, 1
+   no_c_x_axis:
     
 
     std Z+1, r17       ; Second n64 byte
