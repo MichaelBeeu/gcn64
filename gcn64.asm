@@ -116,11 +116,6 @@ gcToN64:
     
     lsr r16
     subi r16, 64
-    ;subi r16, 128
-    ;asr r16
-    ;asr r16
-    ;subi r16, 31
-    ;andi r16, 0b10011111
     std Z+2, r16
 
     ld r16, Y+ ; Joystick Y
@@ -128,12 +123,6 @@ gcToN64:
     
     lsr r16
     subi r16, 64
-    ;clc
-    ;subi r16, 128
-    ;asr r16
-    ;asr r16
-    ;subi r16, 31
-    ;andi r16, 0b10011111
     std Z+3, r16
 
     pop r16
